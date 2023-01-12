@@ -246,6 +246,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 294018a7e39a2d447977790e9e191691, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a86c5aecc7060d64892024881f7665e4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 294018a7e39a2d447977790e9e191691, type: 3}
 --- !u!4 &179198013 stripped
@@ -801,6 +805,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1375320130}
   - component: {fileID: 1375320129}
+  - component: {fileID: 1375320131}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -847,7 +852,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1375320128}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.2, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -856,6 +861,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1375320131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375320128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2de6ae2e8aa24d44b9654825c12582d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particlePrefabs:
+  - {fileID: 198649207461994134, guid: b4069a656bda4d940bf63c71279f5c95, type: 3}
+  - {fileID: 198828295782883032, guid: f99c3ed97779c5b4eb026cb91d4e4933, type: 3}
+  - {fileID: 198229902081006088, guid: 4ef343c2fedb6884aac07e8610d65212, type: 3}
+  - {fileID: 198025859805546612, guid: 721cfe8018b2cd04abd0748143d2a312, type: 3}
+  - {fileID: 198724927268712924, guid: ec40dcc0df25c9c44bb4f938a05e1482, type: 3}
+  - {fileID: 198076815976795324, guid: d79f03dd3c9b07c41a430faecdcdf500, type: 3}
+  - {fileID: 198220203427489738, guid: 16b914e11b128e54fb9f85a547c95812, type: 3}
 --- !u!1 &1593087684
 GameObject:
   m_ObjectHideFlags: 3
@@ -1139,7 +1164,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Call React Funtion
+  m_text: Call React Function
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1167,7 +1192,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16.6
+  m_fontSize: 15.6
   m_fontSizeBase: 16.2
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1300,7 +1325,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1721314132}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1375320131}
+        m_TargetAssemblyTypeName: ReactJSListener, Assembly-CSharp
+        m_MethodName: ShowVFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1721314132
 MonoBehaviour:
   m_ObjectHideFlags: 0
