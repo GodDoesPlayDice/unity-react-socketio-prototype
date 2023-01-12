@@ -1,5 +1,3 @@
-using System;
-using _Scripts;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -30,7 +28,7 @@ public class ReactJSBridge : MonoBehaviour
 
     private int _messagesToReactCount;
 
-    private void TalkToReact()
+    public void TalkToReact()
     {
         _messagesToReactCount++;
         JsMethods.TalkToReact($"Messages from Unity {_messagesToReactCount}");
