@@ -1,8 +1,17 @@
+using System;
+using _Scripts;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ReactJSBridge : MonoBehaviour
 {
     [SerializeField] private ParticleSystem[] particlePrefabs;
+    [SerializeField] private Button talkToReactButton;
+
+    private void Awake()
+    {
+        talkToReactButton.onClick.AddListener(TalkToReact);
+    }
 
     private int ParticlesIndex
     {
@@ -15,8 +24,17 @@ public class ReactJSBridge : MonoBehaviour
         }
         get => _particlesIndex;
     }
+
     private int _particlesIndex;
     private ParticleSystem _spawnedParticle;
+
+    private int _messagesToReactCount;
+
+    private void TalkToReact()
+    {
+        _messagesToReactCount++;
+        JsMethods.TalkToReact($"Messages from Unity {_messagesToReactCount}");
+    }
 
     public void ShowVFX()
     {
@@ -27,6 +45,4 @@ public class ReactJSBridge : MonoBehaviour
         if (_spawnedParticle != null)
             Destroy(_spawnedParticle.gameObject, 1.5f);
     }
-    
-    
 }
